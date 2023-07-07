@@ -1,0 +1,5 @@
+@use 'vuetify/settings' with (
+  $utilities: false,
+  $body-font-family: ('Poppins', 'El Messiri', 'Roboto', 'sans-serif'),
+  $button-text-transform: false,
+);
