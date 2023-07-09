@@ -1,0 +1,24 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Http\Middleware;
+
+use Illuminate\Http\Request;
+
+class ShareData extends \Inertia\Middleware
+{
+    /**
+     * Define the props that are shared by default.
+     *
+     * @return array<string, mixed>
+     */
+    public function share(Request $request): array
+    {
+        return array_merge(parent::share($request), [
+            'modules' => [
+                '$STUDLY_NAME$' => [
+
+                ],
+            ],
+        ]);
+    }
+}

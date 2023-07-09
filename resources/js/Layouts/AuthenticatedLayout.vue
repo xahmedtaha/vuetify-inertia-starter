@@ -2,6 +2,7 @@
 import {computed, ref} from 'vue';
 import {Link, useForm, usePage} from '@inertiajs/vue3';
 import TransitionLayout from "@/Layouts/TransitionLayout.vue";
+import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 defineProps({
     title: {
@@ -22,11 +23,7 @@ const user = computed(() => page.props.auth.user)
         <v-navigation-drawer v-model="drawer" color="teal">
             <div class="px-5 mt-5 mb-3">
                 <Link :href="route('dashboard')">
-                    <img
-                        class="block h-9 w-auto fill-current text-gray-800"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=white"
-                        alt="Logo"
-                    >
+                    <ApplicationLogo class="block h-10 w-auto fill-current text-white" />
                 </Link>
             </div>
             <div class="p-2">
@@ -68,8 +65,8 @@ const user = computed(() => page.props.auth.user)
             <v-list density="compact" nav>
                 <v-list-item prepend-icon="mdi-home" title="Dashboard" :to="route('dashboard')"
                              :active="route().current('dashboard')"></v-list-item>
-                <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-                <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
+                <v-list-item prepend-icon="mdi-account-group" title="Users" :to="route('users.index')"
+                             :active="route().current('users.index')"></v-list-item>
             </v-list>
         </v-navigation-drawer>
 
